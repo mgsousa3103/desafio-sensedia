@@ -13,13 +13,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        height: 100%;
         background-image: linear-gradient(to bottom, #020917, #101725);
         font-size: 14px;
         -webkit-font-smoothing: antialiased !important;
     }
 
-    body, input, button {
-        color: #FFF;
+    body {
+        color: #fff;
         font-size: 14px;
         font-style: normal;
     }
