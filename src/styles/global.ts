@@ -23,18 +23,14 @@ const GlobalStyle = createGlobalStyle`
 
     html, body, #root {
         min-height: 100%;
-        font-family: 'Montserrat', 'Roboto', sans-serif, monospace;
+        font-family: 'Montserrat', sans-serif;
         color: var(--Strong-Grey);
     }
 
     body {
-        padding: 40px 75px;
+        width: 100%;
+        padding: 2.5rem;
         background: var(--White);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
     }
     
     .brand-orange {
