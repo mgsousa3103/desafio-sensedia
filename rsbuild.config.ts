@@ -3,8 +3,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginStyledComponents } from '@rsbuild/plugin-styled-components';
 
 export default defineConfig({
-    plugins: [pluginReact(), pluginStyledComponents()],
-    html: {
-        template: "./public/index.html",
-    }
+  plugins: [pluginReact(), pluginStyledComponents()],
+  html: {
+    template: './public/index.html',
+  },
 });

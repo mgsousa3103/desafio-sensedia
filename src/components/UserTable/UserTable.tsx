@@ -1,27 +1,53 @@
-import React from 'react'
-import { Cell, Column, ResizableTableContainer, Row, Table, TableBody, TableHeader } from 'react-aria-components'
+import {
+  ColumnProps,
+  ResizableTableContainer,
+  TableHeaderProps,
+} from 'react-aria-components';
+import { IPlaceholderUser } from '../../services/jsonplaceholder/jsonplaceholder.interface';
+import {
+  TableContainer,
+  StyledTableHeader,
+  StyledColumnTable,
+  StyledTableBody,
+  StyledRowTable,
+  StyledCellTable,
+} from './UserTable.style';
 
-const UserTable = ({ users }: any) => {
-    return (
-        <ResizableTableContainer>
-            <Table>
-                <TableHeader>
-                    <Column isRowHeader>Name</Column>
-                    <Column>Email</Column>
-                    <Column>Phone</Column>
-                </TableHeader>
-                <TableBody>
-                    {users.map((user: any) => (
-                        <Row key={user.id}>
-                            <Cell>{user.name}</Cell>
-                            <Cell>{user.email}</Cell>
-                            <Cell>{user.phone}</Cell>
-                        </Row>
-                    ))}
-                </TableBody>
-            </Table>
-        </ResizableTableContainer>
-    )
+interface IColumnProps {
+  name: string;
+  id: string;
+  isRowHeader?: boolean;
 }
 
-export default UserTable
+const UserTable = ({ users }: { users: IPlaceholderUser[] }) => {
+  const columns: IColumnProps[] = [
+    { name: 'Name', id: 'name', isRowHeader: true },
+    { name: 'Email', id: 'email' },
+    { name: 'Phone', id: 'phone' },
+  ];
+
+  return (
+    <ResizableTableContainer>
+      <TableContainer aria-label="Lista de usuários">
+        <StyledTableHeader columns={columns}>
+          {(column: any) => (
+            <StyledColumnTable isRowHeader={column.isRowHeader}>
+              {column.name}
+            </StyledColumnTable>
+          )}
+        </StyledTableHeader>
+        <StyledTableBody items={users}>
+          {(item: any) => (
+            <StyledRowTable key={item.id} columns={columns}>
+              {(column: any) => (
+                <StyledCellTable>{item[column.id]}</StyledCellTable>
+              )}
+            </StyledRowTable>
+          )}
+        </StyledTableBody>
+      </TableContainer>
+    </ResizableTableContainer>
+  );
+};
+
+export default UserTable;

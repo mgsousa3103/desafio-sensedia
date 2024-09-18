@@ -6,12 +6,12 @@ import GlobalStyle from './styles/global';
 const queryClient = new QueryClient();
 
 const App = () => {
-    return (
-        <QueryClientProvider client={queryClient}>
-            <GlobalStyle />
-            <AppRoutes />
-        </QueryClientProvider>
-    );
+  return (
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyle />
+      <AppRoutes />
+    </QueryClientProvider>
+  );
 };
 
 export default App;
