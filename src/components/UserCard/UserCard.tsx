@@ -1,6 +1,6 @@
-import { IPlaceholderUser } from '../../services/jsonplaceholder/jsonplaceholder.interface';
+import { LuMail, LuPhone, LuUser } from 'react-icons/lu';
+import type { IPlaceholderUser } from '../../services/jsonplaceholder/jsonplaceholder.type';
 import { CardContainer, CardRow, CardText } from './UserCard.style';
-import { LuUser, LuMail, LuPhone } from 'react-icons/lu';
 
 const UserCard = ({ user }: { user: IPlaceholderUser }) => {
   return (

@@ -2,14 +2,11 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
     width: 100%;
-    min-width: 200px;
-    max-width: 398px;
-    padding: 16px;
+    padding: 1rem;
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    gap: 0.5rem;
 
     border-radius: 0.5rem;
     border: 1px solid var(--Grey);
@@ -19,7 +16,7 @@ export const CardContainer = styled.div`
 export const CardRow = styled.div`
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.5rem;
     align-self: stretch;
 `;
 
@@ -27,9 +24,9 @@ export const CardText = styled.p<{ type: 'name' | 'email' | 'phone' }>`
 font-style: normal;
 font-family: "Montserrat", sans-serif;
  color: ${({ type }) => (type === 'name' ? 'var(--Purple-Light)' : 'var(--Strong-Grey)')};
-    font-size: ${({ type }) => (type === 'name' ? '20px' : '14px')};
+    font-size: ${({ type }) => (type === 'name' ? '1.25rem' : '0.875rem')};
     font-weight: ${({ type }) => (type === 'name' ? '700' : '400')};
-    line-height: ${({ type }) => (type === 'name' ? '29px' : '23.2px')};
+    line-height: ${({ type }) => (type === 'name' ? '2rem' : '1.5rem')};
 
     display: -webkit-box;
     -webkit-box-orient: vertical;

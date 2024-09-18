@@ -1,34 +1,35 @@
-import { useState } from 'react';
-import {
-    Container,
-    SectionRow,
-    SectionColumn,
-    Title,
-    Subtitle,
-    Paragraph,
-    Toggled,
-    SearchInput,
-    CardsWrapper,
-} from './styles';
-import { LuTable2 } from 'react-icons/lu';
+import React, { useState } from 'react';
 import { FaRegAddressCard } from 'react-icons/fa';
+import { LuTable2 } from 'react-icons/lu';
 
 import useUsers from '../../hooks/useUsers';
-import { filteredUsers } from '../../utils/utils';
+import { filterUsers } from '../../utils/utils';
 
-import UserTable from '../../components/UserTable/UserTable';
+import {
+    CardsGrid,
+    Container,
+    SectionColumn,
+    SectionRow,
+} from '../../components/atoms/Layout.style';
+import { Subtitle, Title } from '../../components/atoms/Typography.style';
+
+import Search from '../../components/Search/Search';
+import ToggleButton from '../../components/ToggleButton/ToggleButton';
 import UserCard from '../../components/UserCard/UserCard';
 import UserNotFound from '../../components/UserNotFound/UserNotFound';
+import UserTable from '../../components/UserTable/UserTable';
+import Loading from '../../components/Loading/Loading';
+import Error from '../../components/Error/Error';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isCardView, setIsCardView] = useState(false);
     const { users, isLoading, error } = useUsers();
 
-    if (isLoading) return <p>Carregando...</p>;
-    if (error) return <p>Erro: {error.message}</p>;
+    if (isLoading) return <Loading />;
+    if (error) return <Error />;
 
-    const filtered = filteredUsers(users, searchTerm);
+    const filteredUsers = filterUsers(users, searchTerm);
 
     return (
         <Container>
@@ -40,35 +41,30 @@ const Home = () => {
                 </SectionColumn>
 
                 <SectionColumn orientation="row" justify="flex-end">
-                    <Paragraph>Exibir como</Paragraph>
-                    <Toggled
-                        aria-label="Alterna exibição entre tabela e card"
-                        isSelected={isCardView}
-                        onChange={() => setIsCardView(!isCardView)}
-                    >
-                        {isCardView ? (
-                            <LuTable2 className="brand-orange" size={26} />
-                        ) : (
-                            <FaRegAddressCard className="brand-orange" size={26} />
-                        )}
-                    </Toggled>
+                    <ToggleButton
+                        label="Exibir como"
+                        toggled={isCardView}
+                        onToggle={() => setIsCardView(!isCardView)}
+                        renderOn={<LuTable2 className="brand-orange" size={26} />}
+                        renderOff={<FaRegAddressCard className="brand-orange" size={26} />}
+                    />
                 </SectionColumn>
             </SectionRow>
 
             {/* Search Input */}
             <SectionRow>
                 <SectionColumn>
-                    <SearchInput
-                        aria-label="Pesquisa usuários por nome"
-                        type="text"
-                        placeholder="Pesquisar por nome"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                    <Search
+                        ariaLabel='Pesquisa usuários por nome'
+                        text='Pesquisar por nome'
+                        term={searchTerm}
+                        onSearch={(e) => setSearchTerm(e.target.value)}
                     />
                 </SectionColumn>
             </SectionRow>
 
-            {!filtered.length ? (
+            {/* Table or Cards View and User Not Found */}
+            {!filteredUsers.length ? (
                 <SectionRow>
                     <SectionColumn>
                         <UserNotFound />
@@ -77,14 +73,14 @@ const Home = () => {
             ) : (
                 <SectionRow>
                     <SectionColumn>
-                        {isCardView ? (
-                            <UserTable users={filtered} />
+                        {!isCardView ? (
+                            <UserTable users={filteredUsers} />
                         ) : (
-                            <CardsWrapper>
-                                {filtered.map((user) => (
+                            <CardsGrid>
+                                {filteredUsers.map((user) => (
                                     <UserCard key={user.id} user={user} />
                                 ))}
-                            </CardsWrapper>
+                            </CardsGrid>
                         )}
                     </SectionColumn>
                 </SectionRow>

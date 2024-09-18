@@ -1,19 +1,19 @@
 import {
+    Cell,
+    Column,
+    Row,
     Table,
     TableBody,
     TableHeader,
-    Column,
-    Row,
-    Cell,
 } from 'react-aria-components';
 import styled from 'styled-components';
 
 export const TableContainer = styled(Table)`
     width: 100%;
 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; */
 `;
 
 export const StyledTableHeader = styled(TableHeader)`

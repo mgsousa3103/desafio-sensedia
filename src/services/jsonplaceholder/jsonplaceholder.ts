@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IPlaceholderUser } from './jsonplaceholder.interface';
+import type { IPlaceholderUser } from './jsonplaceholder.type';
 
 export const fetchAllUsers = async () => {
   const { data } = await axios.get<IPlaceholderUser[]>(

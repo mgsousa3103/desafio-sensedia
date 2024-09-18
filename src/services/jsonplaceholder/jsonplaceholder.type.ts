@@ -1,4 +1,4 @@
-export interface IPlaceholderUser {
+export type IPlaceholderUser = {
   id: number;
   name: string;
   username: string;
@@ -7,23 +7,23 @@ export interface IPlaceholderUser {
   phone: string;
   website: string;
   company: Company;
-}
+};
 
-interface Address {
+type Address = {
   street: string;
   suite: string;
   city: string;
   zipcode: string;
   geo: Geo;
-}
+};
 
-interface Geo {
+type Geo = {
   lat: string;
   lng: string;
-}
+};
 
-interface Company {
+type Company = {
   name: string;
   catchPhrase: string;
   bs: string;
-}
+};
