@@ -1,6 +1,6 @@
-import { IPlaceholderUser } from "./jsonplaceholder.types";
+import type { IPlaceholderUser } from './jsonplaceholder.types';
 
 export type UserDisplayProps = {
-    users: IPlaceholderUser[];
-    isCardView: boolean;
-}
+  users: IPlaceholderUser[];
+  isCardView: boolean;
+};

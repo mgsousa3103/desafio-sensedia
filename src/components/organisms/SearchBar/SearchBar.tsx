@@ -1,26 +1,25 @@
-import type React from 'react';
 import { Suspense, lazy } from 'react';
-import Loading from '../../molecules/Loading/Loading';
+import type { SearchBarProps } from '../../../types/search-bar.types';
 import { SectionColumn, SectionRow } from '../../atoms/Layout.style';
-import { SearchBarProps } from '../../../types/search-bar.types';
+import Loading from '../../molecules/Loading/Loading';
 
 const Search = lazy(() => import('../../molecules/Search/Search'));
 
-const SearchBar = ({ term, onSearch, }: SearchBarProps) => {
-    return (
-        <Suspense fallback={<Loading />}>
-            <SectionRow>
-                <SectionColumn>
-                    <Search
-                        ariaLabel="Pesquisa usuários por nome"
-                        text="Pesquisar por nome"
-                        term={term}
-                        onSearch={onSearch}
-                    />
-                </SectionColumn>
-            </SectionRow>
-        </Suspense>
-    );
+const SearchBar = ({ term, onSearch }: SearchBarProps) => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SectionRow>
+        <SectionColumn>
+          <Search
+            ariaLabel="Pesquisa usuários por nome"
+            text="Pesquisar por nome"
+            term={term}
+            onSearch={onSearch}
+          />
+        </SectionColumn>
+      </SectionRow>
+    </Suspense>
+  );
 };
 
 export default SearchBar;

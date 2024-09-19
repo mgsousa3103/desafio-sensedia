@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { media } from "../../utils/media-queries";
+import styled from 'styled-components';
+import { media } from '../../utils/media-queries';
 
 export const CardsGrid = styled.div`
     width: 100%;

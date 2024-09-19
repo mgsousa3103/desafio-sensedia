@@ -1,4 +1,4 @@
-import { ToggleButton, Button } from 'react-aria-components';
+import { Button, ToggleButton } from 'react-aria-components';
 import styled from 'styled-components';
 
 export const Toggled = styled(ToggleButton)`
@@ -8,7 +8,6 @@ export const Toggled = styled(ToggleButton)`
     padding: 0.375rem  0.625rem;
     cursor: pointer;
 `;
-
 
 export const MyButton = styled(Button)`
     background-color: var(--Royal-Purple-Light);

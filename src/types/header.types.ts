@@ -1,4 +1,4 @@
 export type HeaderProps = {
-    isCardView: boolean;
-    onToggle: () => void;
-}
+  isCardView: boolean;
+  onToggle: () => void;
+};

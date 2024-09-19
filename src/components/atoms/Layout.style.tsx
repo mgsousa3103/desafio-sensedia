@@ -37,8 +37,8 @@ export const SectionRow = styled.section`
 `;
 
 export const SectionColumn = styled.div<{
-    orientation?: 'column' | 'row';
-    justify?: 'flex-start' | 'flex-end' | 'center';
+  orientation?: 'column' | 'row';
+  justify?: 'flex-start' | 'flex-end' | 'center';
 }>`
     width: 100%;
     display: flex;

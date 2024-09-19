@@ -1,11 +1,11 @@
-import { IPlaceholderUser } from "./jsonplaceholder.types";
+import type { IPlaceholderUser } from './jsonplaceholder.types';
 
 export type UserTableProps = {
-    users: IPlaceholderUser[];
-}
+  users: IPlaceholderUser[];
+};
 
 export type TableColumnsProps = {
-    name: string;
-    id: string;
-    isRowHeader?: boolean;
-}
+  name: string;
+  id: string;
+  isRowHeader?: boolean;
+};
