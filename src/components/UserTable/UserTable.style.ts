@@ -1,10 +1,10 @@
 import {
-    Cell,
-    Column,
-    Row,
-    Table,
-    TableBody,
-    TableHeader,
+  Cell,
+  Column,
+  Row,
+  Table,
+  TableBody,
+  TableHeader,
 } from 'react-aria-components';
 import styled from 'styled-components';
 

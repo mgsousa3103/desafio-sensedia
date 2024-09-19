@@ -68,3 +68,22 @@ export const CardsGrid = styled.div`
         grid-template-columns: repeat(4, 1fr);
     }
 `;
+
+export const LoadingContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+`;
+
+export const ErrorContainer = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+`;

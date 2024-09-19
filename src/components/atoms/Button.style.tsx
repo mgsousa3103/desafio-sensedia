@@ -1,5 +1,5 @@
-import { Button, Link } from "react-aria-components";
-import styled from "styled-components";
+import { Button, Link } from 'react-aria-components';
+import styled from 'styled-components';
 
 export const MyButton = styled(Button)`
     background-color: var(--Royal-Purple-Light);
@@ -8,4 +8,4 @@ export const MyButton = styled(Button)`
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-`
+`;

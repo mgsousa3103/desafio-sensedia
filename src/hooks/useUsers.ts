@@ -5,6 +5,9 @@ const useUsers = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ['users'],
     queryFn: fetchAllUsers,
+    staleTime: 5 * 60 * 1000,
+    refetchOnWindowFocus: false,
+    retry: 1,
   });
 
   return {

@@ -1,3 +1,10 @@
+export type SearchProps = {
+  ariaLabel: string;
+  text: string;
+  term: string;
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
 export type IPlaceholderUser = {
   id: number;
   name: string;

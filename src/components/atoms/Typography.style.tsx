@@ -12,7 +12,9 @@ export const Title = styled.h2<{ orientation?: 'left' | 'right' | 'center' }>`
     text-align: ${({ orientation }) => (orientation ? orientation : 'left')};
 `;
 
-export const Subtitle = styled.h3 <{ orientation?: 'left' | 'right' | 'center' }>`
+export const Subtitle = styled.h3<{
+  orientation?: 'left' | 'right' | 'center';
+}>`
     width: 100%;
     color: var(--Strong-Grey);
 
@@ -24,7 +26,9 @@ export const Subtitle = styled.h3 <{ orientation?: 'left' | 'right' | 'center' }
     text-align: ${({ orientation }) => (orientation ? orientation : 'left')};
 `;
 
-export const Paragraph = styled.p<{ orientation?: 'left' | 'right' | 'center' }>`
+export const Paragraph = styled.p<{
+  orientation?: 'left' | 'right' | 'center';
+}>`
     color: var(--Strong-Grey);
 
     font-family: 'Montserrat', sans-serif;

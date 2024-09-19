@@ -36,6 +36,13 @@ const GlobalStyle = createGlobalStyle`
     .brand-orange {
         color: var(--Orange);
     }
+
+    .loading-container {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export default GlobalStyle;
