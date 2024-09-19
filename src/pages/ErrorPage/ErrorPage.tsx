@@ -2,14 +2,15 @@ import { Link } from 'react-router-dom';
 import { MyButton } from '../../components/atoms/Buttons.style';
 import { ErrorContainer } from '../../components/atoms/Layout.style';
 import { Subtitle, Title } from '../../components/atoms/Typography.style';
+import { reloadPage } from '../../utils/utils';
 
 const ErrorPage = () => {
   const handleReload = () => {
-    window.location.reload();
+    reloadPage();
   };
 
   return (
-    <ErrorContainer>
+    <ErrorContainer data-testid="error-page">
       <Title orientation="center">Ops! Erro ao carregar a página.</Title>
       <Subtitle orientation="center">
         Não conseguimos carregar a página devido a um erro no servidor ou talvez

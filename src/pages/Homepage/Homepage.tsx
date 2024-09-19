@@ -50,7 +50,7 @@ const Homepage = () => {
   if (error) return <ErrorPage />;
 
   return (
-    <Container>
+    <Container data-testid="homepage">
       <Suspense fallback={<Loading />}>
         <Header isCardView={isCardView} onToggle={toggleView} />
       </Suspense>

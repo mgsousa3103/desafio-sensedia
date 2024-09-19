@@ -1,15 +1,12 @@
-{
-  /* 
-    Split em outro componente e verificar se:
-    1. Renderizou o texto "Exibir como"
+/* 
+  1. Renderizou o componente
 
-    2. Renderizou com toggled false e exibiu o icone correto
-    3. Renderizou com isCardView true e exibiu o icone correto
+  2. Renderizou com toggled false e exibiu o icone correto
+  3. Renderizou com isCardView true e exibiu o icone correto
 
-    4. IsCardView eh false e clicou no botao de toggle e exibiu o icone correto
-    5. IsCardView eh true e clicou no botao de toggle e exibiu o icone correto
+  4. IsCardView eh false e clicou no botao de toggle e exibiu o icone correto
+  5. IsCardView eh true e clicou no botao de toggle e exibiu o icone correto
 */
-}
 import { act, render, screen } from '@testing-library/react';
 import ToggleButton from './ToggleButton';
 
@@ -59,76 +56,76 @@ describe('ToggleButton', () => {
   it('should change from renderOff to renderOn on click', async () => {
     let toggled = false;
 
-    const xulambs = () => {
+    const change = () => {
       toggled = !toggled;
     };
 
-    const x = render(
+    const button = render(
       <ToggleButton
         label="Exibir como"
         toggled={toggled}
-        onToggle={xulambs}
+        onToggle={change}
         renderOn={<div>Tabela</div>}
         renderOff={<div>Card</div>}
       />,
     );
 
     // Garante que renderizou o renderOff
-    expect(x.queryByText('Card')).toBeInTheDocument();
-    expect(x.queryByText('Tabela')).not.toBeInTheDocument();
+    expect(button.queryByText('Card')).toBeInTheDocument();
+    expect(button.queryByText('Tabela')).not.toBeInTheDocument();
 
     act(() => {
-      x.getByTestId('toggle-button').click();
-      x.rerender(
+      button.getByTestId('toggle-button').click();
+      button.rerender(
         <ToggleButton
           label="Exibir como"
           toggled={toggled}
-          onToggle={xulambs}
+          onToggle={change}
           renderOn={<div>Tabela</div>}
           renderOff={<div>Card</div>}
         />,
       );
     });
 
-    expect(x.queryByText('Tabela')).toBeInTheDocument();
-    expect(x.queryByText('Card')).not.toBeInTheDocument();
+    expect(button.queryByText('Tabela')).toBeInTheDocument();
+    expect(button.queryByText('Card')).not.toBeInTheDocument();
   });
 
   it('should change from renderOn to renderOff on click', async () => {
     let toggled = true;
 
-    const xulambs = () => {
+    const change = () => {
       toggled = !toggled;
     };
 
-    const x = render(
+    const button = render(
       <ToggleButton
         label="Exibir como"
         toggled={toggled}
-        onToggle={xulambs}
+        onToggle={change}
         renderOn={<div>Tabela</div>}
         renderOff={<div>Card</div>}
       />,
     );
 
     // Garante que renderizou o renderOff
-    expect(x.queryByText('Tabela')).toBeInTheDocument();
-    expect(x.queryByText('Card')).not.toBeInTheDocument();
+    expect(button.queryByText('Tabela')).toBeInTheDocument();
+    expect(button.queryByText('Card')).not.toBeInTheDocument();
 
     act(() => {
-      x.getByTestId('toggle-button').click();
-      x.rerender(
+      button.getByTestId('toggle-button').click();
+      button.rerender(
         <ToggleButton
           label="Exibir como"
           toggled={toggled}
-          onToggle={xulambs}
+          onToggle={change}
           renderOn={<div>Tabela</div>}
           renderOff={<div>Card</div>}
         />,
       );
     });
 
-    expect(x.queryByText('Card')).toBeInTheDocument();
-    expect(x.queryByText('Tabela')).not.toBeInTheDocument();
+    expect(button.queryByText('Card')).toBeInTheDocument();
+    expect(button.queryByText('Tabela')).not.toBeInTheDocument();
   });
 });

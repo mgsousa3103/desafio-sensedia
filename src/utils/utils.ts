@@ -1,7 +1,5 @@
-import type {
-  IPlaceholderUser,
-  SearchProps,
-} from '../types/jsonplaceholder.types';
+import type { IPlaceholderUser } from '../types/jsonplaceholder.types';
+import type { SearchProps } from '../types/search-bar.types';
 
 export const filterUsers = (users: IPlaceholderUser[], searchTerm: string) => {
   if (!searchTerm.trim()) return users;
@@ -18,4 +16,8 @@ export const areEqual = (prevProps: SearchProps, nextProps: SearchProps) => {
     prevProps.term === nextProps.term &&
     prevProps.onSearch === nextProps.onSearch
   );
+};
+
+export const reloadPage = () => {
+  window.location.reload();
 };
