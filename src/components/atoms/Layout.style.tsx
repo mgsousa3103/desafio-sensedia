@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../../utils/media-queries';
 
+// Layout General
 export const Container = styled.main`
     width: 100%;
     height: 100%;
@@ -36,8 +37,8 @@ export const SectionRow = styled.section`
 `;
 
 export const SectionColumn = styled.div<{
-  orientation?: 'column' | 'row';
-  justify?: 'flex-start' | 'flex-end' | 'center';
+    orientation?: 'column' | 'row';
+    justify?: 'flex-start' | 'flex-end' | 'center';
 }>`
     width: 100%;
     display: flex;
@@ -47,28 +48,7 @@ export const SectionColumn = styled.div<{
     gap: 0.5rem;
 `;
 
-export const CardsGrid = styled.div`
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @media ${media.tablet}{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(auto-fill, 1fr);
-    }
-
-    @media ${media.laptop}{
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media ${media.desktop}{
-        grid-template-columns: repeat(4, 1fr);
-    }
-`;
-
+// Container Loading
 export const LoadingContainer = styled.div`
     width: 100%;
     display: flex;
@@ -78,6 +58,7 @@ export const LoadingContainer = styled.div`
     gap: 1rem;
 `;
 
+// Container Error Page
 export const ErrorContainer = styled.div`
     width: 100%;
     height: 100vh;
@@ -86,4 +67,18 @@ export const ErrorContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+`;
+
+// Container User Not Found
+export const UserNotFoundContainer = styled.div`
+    width: 100%;
+    max-width: 35rem; //560px
+    min-height: 50vh;
+    padding: 2.5rem 0;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
