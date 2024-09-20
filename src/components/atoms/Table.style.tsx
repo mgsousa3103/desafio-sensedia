@@ -33,6 +33,13 @@ export const StyledTableHeader = styled(TableHeader)`
 
 export const StyledColumnTable = styled(Column)`
       color: var(--White);
+
+      &:focus {
+        border-bottom: 0.0625rem solid var(--White);
+        outline: none;
+        border-color: var(--White); 
+        box-shadow: 0 0 0.25rem var(--White); 
+    }
   `;
 
 export const StyledTableBody = styled(TableBody)`
@@ -53,11 +60,11 @@ export const StyledRowTable = styled(Row)`
       border-bottom: 1px solid #EDEDED;
 
       &:focus {
-        border-bottom: 0.125rem solid var(--Purple-Light);
+        border-bottom: 0.0625rem solid var(--Purple-Light);
         outline: none;
         border-color: var(--Purple-Light); 
         box-shadow: 0 0 0.25rem var(--Purple-Light); 
-    }           
+    }
   `;
 
 export const StyledCellTable = styled(Cell)`
@@ -75,4 +82,11 @@ export const StyledCellTable = styled(Cell)`
       flex: 1 0 0;
       overflow: hidden;
       text-overflow:ellipsis;
+
+      &:focus {
+        border-bottom: 0.0625rem solid var(--Purple-Light);
+        outline: none;
+        border-color: var(--Purple-Light); 
+        box-shadow: 0 0 0.25rem var(--Purple-Light); 
+    }
   `;
