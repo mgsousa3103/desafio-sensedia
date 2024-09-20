@@ -1,10 +1,10 @@
 import {
-  Cell,
-  Column,
-  Row,
-  Table,
-  TableBody,
-  TableHeader,
+    Cell,
+    Column,
+    Row,
+    Table,
+    TableBody,
+    TableHeader,
 } from 'react-aria-components';
 import styled from 'styled-components';
 
@@ -51,6 +51,13 @@ export const StyledRowTable = styled(Row)`
       align-self: stretch;
   
       border-bottom: 1px solid #EDEDED;
+
+      &:focus {
+        border-bottom: 0.125rem solid var(--Purple-Light);
+        outline: none;
+        border-color: var(--Purple-Light); 
+        box-shadow: 0 0 0.25rem var(--Purple-Light); 
+    }           
   `;
 
 export const StyledCellTable = styled(Cell)`

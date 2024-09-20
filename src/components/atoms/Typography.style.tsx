@@ -14,7 +14,7 @@ export const Title = styled.h2<{ orientation?: 'left' | 'right' | 'center' }>`
 `;
 
 export const Subtitle = styled.h3<{
-  orientation?: 'left' | 'right' | 'center';
+    orientation?: 'left' | 'right' | 'center';
 }>`
     width: 100%;
     color: var(--Strong-Grey);
@@ -28,12 +28,12 @@ export const Subtitle = styled.h3<{
 `;
 
 export const Paragraph = styled.p<{
-  orientation?: 'left' | 'right' | 'center';
+    orientation?: 'left' | 'right' | 'center';
 }>`
     color: var(--Strong-Grey);
 
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.625rem; // 10px
+    font-size: 0.875rem; // 10px
     font-style: normal;
     font-weight: 400;
     line-height: 1.25rem;

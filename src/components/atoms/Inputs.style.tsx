@@ -17,4 +17,10 @@ export const SearchInput = styled(Input)`
     @media ${media.tablet}{
         max-width: 21rem; // 338px
     }
+
+    &:focus {
+        outline: none;
+        border-color: var(--Purple-Light); 
+        box-shadow: 0 0 0.25rem var(--Purple-Light); 
+    }
 `;

@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { media } from '../utils/media-queries';
 
 const GlobalStyle = createGlobalStyle`
     :root{
+        --My-White: rgba(236, 240, 241,1);
         --White: rgba(248, 248, 248, 1);
         --White-Light: rgba(252, 252, 252, 1);
         --Grey: rgba(196, 196, 196, 1);
@@ -29,12 +31,16 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         width: 100%;
-        padding: 2.5rem;
+        padding: 1rem;
         background: var(--White);
     }
     
+    .brand-color {
+        color: var(--Purple-Light);
+    }
+
     .brand-orange {
-        color: var(--Orange);
+        color: var(--Orange)
     }
 
     .loading-container {
@@ -42,6 +48,12 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media ${media.tablet} {
+        body {
+            padding: 2.5rem;
+        }
     }
 `;
 
