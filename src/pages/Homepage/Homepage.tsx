@@ -41,13 +41,17 @@ const Homepage = () => {
     500,
   );
 
-  if (isLoading)
+  if (isLoading) {
     return (
       <div className="loading-container">
         <Loading />
       </div>
     );
-  if (error) return <ErrorPage />;
+  }
+
+  if (error) {
+    return <ErrorPage />;
+  }
 
   return (
     <Container data-testid="homepage">

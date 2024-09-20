@@ -2,7 +2,9 @@ import type { IPlaceholderUser } from '../types/jsonplaceholder.types';
 import type { SearchProps } from '../types/search-bar.types';
 
 export const filterUsers = (users: IPlaceholderUser[], searchTerm: string) => {
-  if (!searchTerm.trim()) return users;
+  if (!searchTerm.trim()) {
+    return users;
+  }
 
   const lowerCaseTerm = searchTerm.toLowerCase();
 
