@@ -7,7 +7,7 @@ const Search = lazy(() => import('../../molecules/Search/Search'));
 
 const SearchBar = ({ term, onSearch }: SearchBarProps) => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading />} data-testid="search-bar">
       <SectionRow>
         <SectionColumn>
           <Search

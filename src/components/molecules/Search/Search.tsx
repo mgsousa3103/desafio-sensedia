@@ -6,6 +6,7 @@ import { SearchInput } from '../../atoms/Inputs.style';
 const Search = ({ ariaLabel, text, term, onSearch }: SearchProps) => {
   return (
     <SearchInput
+      data-testid="search-input"
       aria-label={ariaLabel}
       placeholder={text}
       value={term}

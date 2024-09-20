@@ -13,7 +13,7 @@ import UserNotFound from '../UserNotFound/UserNotFound';
 
 const UserTable = ({ users }: UserTableProps) => {
   return (
-    <ResizableTableContainer>
+    <ResizableTableContainer data-testid="user-table">
       <TableContainer aria-label="Lista de usuários">
         <StyledTableHeader columns={columns}>
           {(column: any) => (

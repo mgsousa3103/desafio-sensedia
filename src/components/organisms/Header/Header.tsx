@@ -7,7 +7,7 @@ import ToggleButton from '../../molecules/ToggleButton/ToggleButton';
 
 const Header = ({ isCardView, onToggle }: HeaderProps) => {
   return (
-    <SectionRow>
+    <SectionRow data-testid="header">
       <SectionColumn orientation="column">
         <Title>Olá! Seja bem-vindo(a)!</Title>
         <Subtitle>Verifique se seu nome aparece entre os usuários!</Subtitle>
@@ -15,6 +15,7 @@ const Header = ({ isCardView, onToggle }: HeaderProps) => {
 
       <SectionColumn orientation="row" justify="flex-end">
         <ToggleButton
+          aria-label="toggle-view"
           label="Exibir como"
           toggled={isCardView}
           onToggle={onToggle}

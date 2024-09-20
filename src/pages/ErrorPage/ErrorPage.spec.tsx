@@ -1,10 +1,4 @@
-/**
- * 1. Deve renderizar o componente ErrorPage
- * 2. Deve renderizar o título e subtitulo corretamente
- * 3. Deve renderizar o botão de recarregar corretamente
- * 4. Deve renderizar o botão de voltar corretamente
- */
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { reloadPage } from '../../utils/utils';
 import ErrorPage from './ErrorPage';
@@ -49,8 +43,7 @@ describe('ErrorPage', () => {
     );
 
     act(() => {
-      const reloadButton = screen.getByText('Recarregar');
-      reloadButton.click();
+      screen.getByText('Recarregar').click();
     });
 
     expect(screen.getByText('Recarregar')).toBeInTheDocument();

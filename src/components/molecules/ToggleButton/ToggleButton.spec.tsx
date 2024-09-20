@@ -1,17 +1,8 @@
-/* 
-  1. Renderizou o componente
-
-  2. Renderizou com toggled false e exibiu o icone correto
-  3. Renderizou com isCardView true e exibiu o icone correto
-
-  4. IsCardView eh false e clicou no botao de toggle e exibiu o icone correto
-  5. IsCardView eh true e clicou no botao de toggle e exibiu o icone correto
-*/
 import { act, render, screen } from '@testing-library/react';
 import ToggleButton from './ToggleButton';
 
 describe('ToggleButton', () => {
-  it('should render default', () => {
+  it('should render the ToggleButton component ', () => {
     render(
       <ToggleButton
         label="Exibir como"
@@ -24,7 +15,7 @@ describe('ToggleButton', () => {
     expect(screen.getByText('Exibir como')).toBeInTheDocument();
   });
 
-  it('should render renderOff', () => {
+  it('should render renderOff prop', () => {
     render(
       <ToggleButton
         label="Exibir como"
@@ -39,7 +30,7 @@ describe('ToggleButton', () => {
     expect(screen.queryByText('Tabela')).not.toBeInTheDocument();
   });
 
-  it('should render renderOn', async () => {
+  it('should render renderOn prop', async () => {
     render(
       <ToggleButton
         label="Exibir como"
@@ -70,7 +61,6 @@ describe('ToggleButton', () => {
       />,
     );
 
-    // Garante que renderizou o renderOff
     expect(button.queryByText('Card')).toBeInTheDocument();
     expect(button.queryByText('Tabela')).not.toBeInTheDocument();
 

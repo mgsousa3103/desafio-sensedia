@@ -3,8 +3,8 @@ import { Spinner } from '../../atoms/Spinner.style';
 
 const Loading = () => {
   return (
-    <LoadingContainer>
-      <Spinner />
+    <LoadingContainer data-testid="loading">
+      <Spinner data-testid="spinner" />
     </LoadingContainer>
   );
 };

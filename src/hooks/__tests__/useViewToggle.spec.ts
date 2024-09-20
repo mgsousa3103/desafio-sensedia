@@ -1,7 +1,3 @@
-/* 
-  1. Deve inicializar com "isCardView" como false
-  2. Deve mudar "isCardView" para true quando toggleView for chamado
-*/
 import { act, renderHook } from '@testing-library/react';
 import useViewToggle from '../useViewToggle';
 

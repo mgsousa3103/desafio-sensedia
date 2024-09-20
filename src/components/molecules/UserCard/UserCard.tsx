@@ -4,7 +4,7 @@ import { CardContainer, CardRow, CardText } from '../../atoms/Card.style';
 
 const UserCard = ({ user }: UserCardProps) => {
   return (
-    <CardContainer>
+    <CardContainer data-testid="user-card">
       <CardRow>
         <LuUser className="brand-orange" size={26} />
         <CardText type="name">{user.name}</CardText>

@@ -1,7 +1,3 @@
-/**
- * 1. Deve chamar a funcao effect apos o delay
- * 2. Nao deve chamar a funcao effect apos o delay
- */
 import { renderHook } from '@testing-library/react';
 import useDebouncedEffect from '../useDebouncedEffect';
 

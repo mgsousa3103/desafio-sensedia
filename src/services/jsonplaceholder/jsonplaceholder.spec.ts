@@ -1,9 +1,6 @@
-/* 
-  1. Deve retornar uma lista de usuarios
-  2. Deve exibir erro no console caso a requisição falhe
-*/
 import axios from 'axios';
 import type { IPlaceholderUser } from '../../types/jsonplaceholder.types';
+import { mockUsersData } from '../../utils/constants';
 import { fetchAllUsers } from './jsonplaceholder';
 
 vi.mock('axios');
@@ -11,31 +8,7 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe('fetchAllUsers', () => {
   it('should return a list of users', async () => {
-    const mockData: IPlaceholderUser[] = [
-      {
-        id: 1,
-        name: 'John Doe',
-        username: 'johndoe',
-        email: 'johndoe@example.com',
-        address: {
-          street: '123 Main St',
-          suite: 'Apt. 123',
-          city: 'New York',
-          zipcode: '12345',
-          geo: {
-            lat: '40.7128',
-            lng: '-74.0060',
-          },
-        },
-        phone: '1-212-555-1234',
-        website: 'http://example.com',
-        company: {
-          name: 'ACME Corporation',
-          catchPhrase: 'Multi-tiered zero tolerance productivity',
-          bs: 'strategy deploy e-markets',
-        },
-      },
-    ];
+    const mockData: IPlaceholderUser[] = mockUsersData;
 
     mockedAxios.get.mockResolvedValue({ data: mockData });
 
